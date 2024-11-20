@@ -1,0 +1,43 @@
+.links{
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    gap: 20px;
+}
+.container {
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 9px;
+    text-align: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    width: 160px; /* Ancho fijo del contenedor */
+    height: 180px; /* Altura fija del contenedor */
+    overflow: hidden;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.18);
+}
+
+.image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image img {
+    max-width: 100%; /* Limita el ancho máximo al tamaño de su contenedor */
+    max-height: 250%; /* Limita la altura máxima al tamaño de su contenedor */
+    object-fit: contain; /* Mantiene la proporción de la imagen */
+    transform: translateY(15px);
+}
+
+.text {
+    flex: 1;
+    font-size: 10px;
+    margin-left: 5px;
+    padding: 5px;
+    font-weight: lighter;
+    align-content: center;
+    text-align: left;
+}

@@ -1,0 +1,226 @@
+@charset "UTF-8";
+body {
+  height: 100vh;
+  align-content: center;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.container {
+  height: auto;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  background-image: url("images/background.svg");
+  background-size: cover;
+  filter: blur(5px);
+  opacity: 0.9;
+  z-index: -1;
+}
+
+.board {
+  background-image: url("images/background.svg");
+  background-size: cover;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.122);
+  border-radius: 9px;
+  text-align: center;
+  justify-self: center;
+  width: 550px;
+  height: auto;
+  padding: 50px;
+  padding-top: 40px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 0 15%;
+  margin: 5px 0;
+  font-family: Poppins;
+}
+.titles h1 {
+  font-size: 22px;
+  margin: 0;
+}
+.titles h2 {
+  font-size: 13px;
+  line-height: 14px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.social {
+  /* Hay que ponerlo asi, porque esta bug este logo. cuando se consigan logos iguales se cambia este dato */
+}
+.social img {
+  width: 8%;
+}
+.social .amazon {
+  width: 9.5%;
+  transform: translate(-2px, 5px);
+}
+
+.profile-pic img {
+  margin: 0;
+  padding: 0;
+  width: 22%;
+  border-radius: 500px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.last-yt-video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+  height: 0; /* Para que el contenedor no tenga altura fija */
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.last-yt-video::before {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  width: 98%;
+  height: 98%;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease; /* Transición suave para el efecto */
+  border-radius: 9px;
+  z-index: 1; /* Asegura que el pseudo-elemento esté encima del iframe */
+  pointer-events: none;
+}
+
+.last-yt-video:hover::before {
+  background-color: rgba(0, 0, 0, 0.226);
+  cursor: pointer;
+}
+
+.last-yt-video iframe {
+  border-radius: 9px;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  width: 98%;
+  height: 98%;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: 130px 130px 130px;
+  gap: 0 55px;
+  justify-content: center;
+  transform: translateY(-25px);
+}
+
+.link-boxes {
+  margin-top: 30px;
+  background-color: white;
+  border-radius: 9px;
+  text-align: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 160px; /* Ancho fijo del contenedor */
+  height: 170px; /* Altura fija del contenedor */
+  overflow: hidden;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.18);
+}
+
+.image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.image img {
+  max-width: 144%; /* Limita el ancho máximo al tamaño de su contenedor */
+  max-height: 250%; /* Limita la altura máxima al tamaño de su contenedor */
+  object-fit: contain; /* Mantiene la proporción de la imagen */
+  transform: translateY(15px);
+}
+
+.text {
+  flex: 1;
+  font-size: 10px;
+  margin-left: 5px;
+  padding: 5px;
+  font-weight: lighter;
+  align-content: center;
+  text-align: left;
+}
+
+.tiktok::before, .whatsapp-channel::before, .youtube::before,
+.instagram::before, .productos-favoritos::before {
+  content: "";
+  filter: invert(1);
+  width: 16px; /* Ajusta el tamaño */
+  height: 16px;
+  background-size: contain;
+  position: absolute;
+  z-index: 1;
+  transform: translate(140px, 62px);
+}
+
+.tiktok::before {
+  background-image: url(/images/mini-icons/tiktok.svg);
+}
+
+.whatsapp-channel::before {
+  background-image: url(/images/mini-icons/link.svg);
+}
+
+.youtube::before {
+  background-image: url(/images/mini-icons/yt.svg);
+}
+
+.instagram::before {
+  background-image: url(/images/mini-icons/instagram.svg);
+}
+
+.productos-favoritos::before {
+  background-image: url(/images/mini-icons/amazon.svg);
+}
+
+@media screen and (max-height: 1034px) {
+  body {
+    position: relative;
+    height: auto;
+  }
+  body::before {
+    height: auto;
+  }
+}
+@media screen and (max-width: 653px) {
+  .board, .links {
+    width: 85vw;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
