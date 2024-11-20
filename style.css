@@ -130,6 +130,10 @@ body::before {
   height: 98%;
 }
 
+.links-container {
+  width: 100%;
+}
+
 .links {
   display: grid;
   grid-template-columns: 130px 130px 130px;
@@ -180,7 +184,7 @@ body::before {
 .instagram::before, .productos-favoritos::before {
   content: "";
   filter: invert(1);
-  width: 16px; /* Ajusta el tamaño */
+  width: 16px;
   height: 16px;
   background-size: contain;
   position: absolute;
@@ -218,8 +222,28 @@ body::before {
   }
 }
 @media screen and (max-width: 653px) {
+  body {
+    overflow: scroll;
+  }
   .board, .links {
-    width: 85vw;
+    width: 75vw;
+  }
+  .links {
+    grid-template-columns: 33% 33% 33%;
+    gap: 0 20px;
+  }
+  .link-boxes {
+    transition: width 0.1s ease-out;
+    transition: height 0.1s ease-out;
+    width: 140px; /* Ancho fijo del contenedor */
+    height: 150px; /* Altura fija del contenedor */
+  }
+  .tiktok::before, .whatsapp-channel::before, .youtube::before,
+  .instagram::before, .productos-favoritos::before {
+    transform: translate(120px, 52px);
+  }
+  .whatsapp-channel::before {
+    transform: translate(120px, 42px);
   }
 }
 
