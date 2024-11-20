@@ -79,7 +79,7 @@ body::before {
     img{
         margin: 0;
         padding: 0;
-        width: 22%;
+        width: 120px;
         border-radius: 500px;
     }
 }
@@ -92,6 +92,7 @@ body::before {
     width: 100%;
     padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
     height: 0; /* Para que el contenedor no tenga altura fija */
+    margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -205,6 +206,9 @@ body::before {
         height: auto;
      }
 }
+@media screen and (max-width: 760px) {
+    
+}
 @media screen and (max-width: 653px){
     body{
         overflow: scroll;
@@ -227,5 +231,24 @@ body::before {
     }
     .whatsapp-channel::before{
         transform: translate(120px, 42px);
+    }
+}
+@media screen and (max-width: 500px) {
+    .links{
+        grid-template-columns: 50% 50%;
+    }
+    .link-boxes{
+        margin: auto;
+        margin-top: 30px;
+    }
+}
+@media screen and (max-width: 338px) {
+    .links{
+        display: flex;
+        flex-direction: column;
+    }
+    .link-boxes{
+        margin: auto;
+        margin-top: 30px;
     }
 }
